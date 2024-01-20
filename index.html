@@ -1,93 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Simple Webpage</title>
-    <style>
-        .pane {
-            height: 100vh;
-            float: left;
-            padding: 5px;
-            box-sizing: border-box;
-        }
-        #pane1 {
-            width: 15%;
-            float: left;
-            background-color: #f2f2f2;
-        }
-        #pane2 {
-            width: 85%;
-            background-color: #e6e6e6;
-        }
-        /* This is the new CSS for the button */
-        .orange-button {
-            background-color: orange;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 12px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 24px;
-        }
-        /* This is the new CSS for the widget */
-        .widget {
-            border: 1px solid #000;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 10px; /* This is the new line for rounded corners */
-            width: 45%; /* Adjust the width as needed */
-            height: 200px; /* Adjust the height as needed */
-            float: left; /* This will allow multiple widgets to sit side by side */
-        }
-        nav h2 {font-size: 10px; /* Adjust as needed */}
-        nav li {font-size: 8px;}
-        nav ul {list-style-type: none;}
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-        .left-align {
-            text-align: left;
-        }
-
-        /* Add this CSS for the user icon and dropdown */
-        .user-icon {
-            font-size: 12px;
-            float: right;
-            margin-right: 10px;
-            margin-top: 10px;
-            position: relative; /* This is needed for the dropdown positioning */
-        }
-        #username {
-            margin-left: 10px;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 24px;
-            right: 0;
-            left: auto;
-        }
-        .dropdown a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 12px;
-        }
-        .dropdown a:hover {background-color: #ddd;}
-        .user-icon:hover .dropdown {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -102,55 +16,78 @@
             <a href="#">Logout</a>
         </div>
     </div>
-
     <h1>Eduventures</h1>
+    <!--<button class="pane-button" onclick="togglePane()">Toggle Pane</button>-->
+  
+    <button class="openbtn" onclick="openNav()">☰</button>
 
-    <div id="pane1" class="pane">
-        <!-- Add your navigation links here -->
-        <nav>
-            <ul>
-                <li>
-                    <h2 class="left-align">My Library</h2>
-                    <li class="left-align"><i class="fas fa-folder"></i> <a href="settings.html">Stories</a></li>
-                    <li class="left-align"><i class="fas fa-folder"></i> <a href="settings.html">Adventures</a></li>
-                    <li class="left-align"><i class="fas fa-folder"></i><a href="settings.html">Image Library</a></li>
-                    <!-- Add more pages as needed -->
-                </li>
-                <li>
-                    <h2 class="left-align">My Profile</h2>
-                    <li class="left-align"><i class="fas fa-folder"></i> <a href="settings.html">Bookmarks</a></li>
-                    <li class="left-align"><i class="fas fa-folder"></i> <a href="settings.html">Liked stories</a></li>
-                </li>
-                <!-- Add more groups as needed -->
-            </ul>
-            <ul>
-                <li class="left-align"><a href="settings.html">Settings</a></li>
-                <!-- Add more pages as needed -->
-            </ul>
-        </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#AboutUs">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
     </div>
-    <div id="pane2" class="pane">
-        <!-- This is the new widget -->
-        <div class="widget">
-            <h2>Personalized Story</h2>
-            <p>Experience the stories generated with AI</p>
-            <button class="orange-button"
-             onclick="window.open('storyGenerator.html', '_blank')">Create a new Story!!</button>
-        </div>
 
-        <!-- This is the new widget -->
-        <div class="widget">
-            <h2>Print your Dreams</h2>
-            <p>Experience print as a Service</p>
-            <button class="orange-button"
-                onclick="window.open('storyGenerator.html', '_blank')">Order Printed Story</button>
-        </div>
+    <div class="container">
+        <section class="about">
+          <div class="about-container">
+            <!-- This is the new widget -->
+            <div class="widget" id="createWidget">
+                <h2>Personalized Story</h2>
+                <p>Experience the stories generated with AI</p>
+                <button class="orange-button"
+                onclick="window.open('http://127.0.0.1:5500/storyGenerator.html', '_blank')">Create Story</button>
+            </div>
+
+            <!-- This is the new widget -->
+            <div class="widget" id="printWidget">
+                <h2>Print your Dreams</h2>
+                <p>Experience print as a Service</p>
+                <button class="orange-button"
+                onclick="window.open('http://127.0.0.1:5500/storyGenerator.html', '_blank')">Print Story</button>
+            </div>
+
+            <!-- This is the new widget -->
+            <div class="widget" id="characterWidget">
+                <h2>Personalized Characters</h2>
+                <p>Create your own characters</p>
+                <button class="orange-button"
+                onclick="window.open('http://127.0.0.1:5500/storyGenerator.html', '_blank')">Create Characters</button>
+            </div>
+          </div>
+        </section>
+        <section class="contact" id="AboutUs">
+            <h1>About Us</h1>
+            <div class="contact-container">
+                <!-- This is the new widget -->
+                <div class="widget" id="ceoWidget">
+                    <h2>Chief Executive Officer</h2>
+                </div>
+                <!-- This is the new widget -->
+                <div class="widget" id="ctoWidget">
+                    <h2>Chief Technology Officer</h2>
+                </div>
+                <!-- This is the new widget -->
+                <div class="widget" id="ctoWidget">
+                    <h2>Chief Information Officer</h2>
+                </div>
+                <!-- This is the new widget -->
+                <div class="widget" id="finDirWidget">
+                    <h2>Finance Director</h2>
+                </div>
+            </div>
+          </section>
     </div>
-    <div class="clearfix"></div>
 
     <script>
-        // JavaScript code to change the header text
-        document.getElementById("header").innerHTML = "Welcome to My Simple Webpage!";
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
     </script>
 </body>
 </html>

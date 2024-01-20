@@ -2,105 +2,63 @@
 <html>
 <head>
     <title>Story Generator</title>
-    <style>
-        .pane {
-            height: 100vh;
-            float: left;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        #pane1 {
-            width: 100%;
-            background-color: #f2f2f2;
-        }
-        /* This is the new CSS for the button */
-        .orange-button {
-            background-color: orange;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 8px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        /* This is the new CSS for the widget */
-        .widget {
-            border: 1px solid #000;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 10px; /* This is the new line for rounded corners */
-        }
-        /* This is the new CSS for the dropdown menu */
-        .dropdown-menu {
-            width: 18%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            float: left;
-            margin-right: 2%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style_SG.css">
 </head>
 <body>  
-    <div id="pane1" class="pane">
-        <!-- This is the new widget -->
-        <div class="widget">
-            <h3>Create a new Story</h3>
-            
-            <!-- Add this input element for text prompt -->
-            <input type="text" id="storyPrompt" placeholder="Enter your story prompt here">
+    <!-- This is the new widget -->
+    <div class="widget">
+        <h3>Create a new Story</h3>
+        
+        <!-- Add this input element for text prompt -->
+        <input type="text" id="storyPrompt" placeholder="Enter your story prompt here">
 
-            <!-- Add a heading for the dropdown menu -->
-            <h4>Configure the Storyline</h4>
+        <!-- Add a heading for the dropdown menu -->
+        <h4>Configure the Storyline</h4>
 
-            <!-- Add these dropdown menus with the new class -->
-            <select id="storyType1" class="dropdown-menu">
-                <option value="language">Language</option>
-                <option value="sci-fi">English</option>
-                <option value="mystery">Deutsch</option>
-                <!-- Add more options as needed -->
-            </select>
+        <!-- Add these dropdown menus with the new class -->
+        <select id="storyType1" class="dropdown-menu">
+            <option value="language">Language</option>
+            <option value="sci-fi">English</option>
+            <option value="mystery">Deutsch</option>
+            <!-- Add more options as needed -->
+        </select>
 
-            <select id="storyType2" class="dropdown-menu">
-                <option value="storytype">Story type</option>
-                <option value="sci-fi">Sci-Fi</option>
-                <option value="mystery">Mystery</option>
-                <!-- Add more options as needed -->
-            </select>
+        <select id="storyType2" class="dropdown-menu">
+            <option value="storytype">Story type</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="mystery">Mystery</option>
+            <!-- Add more options as needed -->
+        </select>
 
-            <select id="storyType3" class="dropdown-menu">
-                <option value="readerage">Reader Age</option>
-                <option value="sci-fi">1-2 years</option>
-                <option value="mystery">2-3 years</option>
-                <option value="mystery">3-4 years</option>
-                <option value="mystery">4-6 years</option>
-                <option value="mystery">6-8 years</option>
-                <!-- Add more options as needed -->
-            </select>
+        <select id="storyType3" class="dropdown-menu">
+            <option value="readerage">Reader Age</option>
+            <option value="sci-fi">1-2 years</option>
+            <option value="mystery">2-3 years</option>
+            <option value="mystery">3-4 years</option>
+            <option value="mystery">4-6 years</option>
+            <option value="mystery">6-8 years</option>
+            <!-- Add more options as needed -->
+        </select>
 
-            <select id="storyType4" class="dropdown-menu">
-                <option value="writingstyle">Writing Style</option>
-                <option value="sci-fi">Empowering</option>
-                <option value="mystery">Action-packed</option>
-                <option value="mystery">Humourous</option>
-                <option value="mystery">Motivating</option>
-                <!-- Add more options as needed -->
-            </select>
+        <select id="storyType4" class="dropdown-menu">
+            <option value="writingstyle">Writing Style</option>
+            <option value="sci-fi">Empowering</option>
+            <option value="mystery">Action-packed</option>
+            <option value="mystery">Humourous</option>
+            <option value="mystery">Motivating</option>
+            <!-- Add more options as needed -->
+        </select>
 
-            <select id="storyType5" class="dropdown-menu">
-                <option value="fantasy">Fantasy</option>
-                <option value="sci-fi">Sci-Fi</option>
-                <option value="mystery">Mystery</option>
-                <!-- Add more options as needed -->
-            </select>
+        <select id="storyType5" class="dropdown-menu">
+            <option value="fantasy">Fantasy</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="mystery">Mystery</option>
+            <!-- Add more options as needed -->
+        </select>
 
-            <button class="orange-button">Generate Story</button>
-        </div>
+        <button class="orange-button">Generate Story</button>
     </div>
+
     <script>
         // JavaScript code to change the header text
         document.getElementById("header").innerHTML = "Welcome to My Simple Webpage!";
